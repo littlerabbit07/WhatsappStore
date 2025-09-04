@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopEase - Order via WhatsApp</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🛍️ ShopEase</h1>
+            <p>Browse our products and order via WhatsApp</p>
+        </div>
+
+        <div class="cart-summary" onclick="openCart()">
+            🛒 Cart (<span id="cart-count">0</span>) - $<span id="cart-total">0.00</span>
+        </div>
+
+        <div class="categories">
+            <button class="category-btn active" onclick="filterProducts('all')">All Products</button>
+            <button class="category-btn" onclick="filterProducts('electronics')">Electronics</button>
+            <button class="category-btn" onclick="filterProducts('clothing')">Clothing</button>
+            <button class="category-btn" onclick="filterProducts('food')">Food & Drinks</button>
+            <button class="category-btn" onclick="filterProducts('home')">Home & Garden</button>
+        </div>
+
+        <div class="products-grid" id="products-grid">
+            <!-- Products will be loaded here -->
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cart-modal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h2>🛒 Your Cart</h2>
+                <button class="close-cart" onclick="closeCart()">×</button>
+            </div>
+            
+            <div id="cart-items">
+                <!-- Cart items will be displayed here -->
+            </div>
+            
+            <div class="cart-total">
+                Total: $<span id="modal-cart-total">0.00</span>
+            </div>
+            
+            <div class="customer-info">
+                <input type="text" id="customer-name" placeholder="Your Name" required>
+                <input type="tel" id="customer-phone" placeholder="Your Phone Number" required>
+                <input type="text" id="customer-address" placeholder="Delivery Address (Optional)">
+                <textarea id="customer-notes" placeholder="Special instructions (Optional)"></textarea>
+            </div>
+            
+            <button class="whatsapp-btn" onclick="sendToWhatsApp()">
+                📱 Send Order via WhatsApp
+            </button>
+        </div>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
